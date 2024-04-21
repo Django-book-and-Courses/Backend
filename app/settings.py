@@ -21,6 +21,7 @@ INSTALLED_APPS = [
 
     # Django Apps
 	'ebooks',
+	'cursos',
     'authentication',
 
     # Third-party applications

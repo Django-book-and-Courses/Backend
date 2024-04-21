@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from ebooks.models import Ebook
 
-class EbookSerializer(serializers.ModelSerializer):
+class EbookModelSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = Ebook
