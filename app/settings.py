@@ -21,7 +21,7 @@ INSTALLED_APPS = [
 
     # Django Apps
 	'ebooks',
-    'authetication',
+    'authentication',
 
     # Third-party applications
     'corsheaders',
@@ -118,3 +118,10 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Auth
+AUTH_USER_MODEL = "authentication.Users"
+
+AUTHENTICATION_BACKENDS = [
+    "authentication.backends.CustomBackends",
+]
