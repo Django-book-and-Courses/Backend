@@ -1,4 +1,4 @@
-from django.db.models.signals import pre_save
+from django.db.models.signals import post_save
 from django.dispatch import receiver
 from .models import CustomUser, UserProfile
 
@@ -6,7 +6,7 @@ from .models import CustomUser, UserProfile
 DEFAULT_IMAGE_PATH = 'profile_pictures/default.jpg'
 
 # Signal handler for user creation
-@receiver(pre_save, sender=CustomUser)
+@receiver(post_save, sender=CustomUser)
 def user_create_handler(sender, instance, created, **kwargs):
     """
     this handler create user profile when user register

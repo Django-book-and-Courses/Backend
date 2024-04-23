@@ -118,6 +118,12 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 # Auth
 AUTH_USER_MODEL = "authentication.CustomUser"
 
+SESSION_COOKIE_SECURE = True
+SESSION_COOKIE_HTTPONLY = True
+SESSION_COOKIE_SAMESITE = "Strict"
+
+APPEND_SLASH = False
+
 # AUTHENTICATION_BACKENDS = [
 #     "authentication.backends.CustomBackends",
 # ]
