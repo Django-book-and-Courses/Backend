@@ -9,6 +9,7 @@ urlpatterns = [
     #Incluindo todas as urls dos arquivos urls.py(versao 1) de cada app
     path('api/v1/', include('ebooks.urls')),
     path('api/v1/', include('authentication.urls')),
+    path('api/v1/', include('cursos.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

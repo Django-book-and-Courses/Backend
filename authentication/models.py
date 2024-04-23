@@ -32,6 +32,7 @@ class Users(AbstractUser):
     gender = models.CharField(max_length=20)
     phone = models.CharField(max_length=16)
     address = models.CharField(max_length=150)
+    date_of_birth = models.DateField(blank=True, null=True)
 
     EMAIL_FIELD = 'email'
     USERNAME_FIELD = 'username'

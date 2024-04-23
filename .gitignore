@@ -137,6 +137,8 @@ GitHub.sublime-settings
 !.vscode/extensions.json 
 .history
 
+/__pycache__/*
+
 Create_Venv_Django.bat
 Start_Venv_Django.bat
 Create_app.ps1

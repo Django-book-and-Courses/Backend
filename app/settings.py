@@ -21,6 +21,7 @@ INSTALLED_APPS = [
 
     # Django Apps
 	'ebooks',
+	'cursos',
     'authentication',
 
     # Third-party applications
@@ -39,9 +40,7 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
 ]
 
-CORS_ALLOWED_ORIGINS = [
-    'http://127.0.0.1:5500'
-]
+CORS_ALLOW_ALL_ORIGINS = True
 
 ROOT_URLCONF = 'app.urls'
 
