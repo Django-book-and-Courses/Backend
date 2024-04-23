@@ -8,6 +8,16 @@ class CustomUser(AbstractUser):
     REQUIRED_FIELDS = []
 
 
+class UserProfile(models.Model):
+    user = models.OneToOneField(
+        CustomUser, verbose_name="User", on_delete=models.CASCADE
+    )
+    bio = models.TextField(blank=True, null=True)
+    picture = models.ImageField(
+        upload_to="profile_pictures", default="profile_pictures/default.jpg"
+    )
+
+
 # class UserManager(BaseUserManager):
 #     def _create_user(self, email, password, **extra_fields):
 #         email = self.normalize_email(email)
