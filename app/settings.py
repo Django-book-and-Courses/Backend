@@ -35,6 +35,7 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "corsheaders.middleware.CorsMiddleware",
+    "authentication.middleware.RequestTimeMiddleware",
 ]
 
 CORS_ALLOWED_ORIGINS = ["http://127.0.0.1:5500"]
@@ -127,3 +128,5 @@ APPEND_SLASH = False
 # AUTHENTICATION_BACKENDS = [
 #     "authentication.backends.CustomBackends",
 # ]
+
+DEFALUT_PROFILE_IMAGE_PATH = "/media/profile_pictures/default.jpg"

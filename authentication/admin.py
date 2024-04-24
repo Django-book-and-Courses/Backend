@@ -5,6 +5,11 @@ from .models import CustomUser, UserProfile
 
 
 class CustomUserAdmin(UserAdmin):
+    fieldsets = UserAdmin.fieldsets + (
+        ('Auth', {'fields': ('is_totp',)}),
+    )
+    readonly_fields = ('is_totp',)
+
     add_fieldsets = (
         (
             None,

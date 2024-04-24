@@ -4,13 +4,19 @@ from django.contrib.auth.models import AbstractUser
 
 class CustomUser(AbstractUser):
     email = models.EmailField(unique=True)
+    is_totp = models.BooleanField(default=False)
+    totp_secret = models.CharField(max_length=32, blank=True, null=True)
     USERNAME_FIELD = "email"
-    REQUIRED_FIELDS = []
+    REQUIRED_FIELDS = ["username"]
 
 
 class UserProfile(models.Model):
     user = models.OneToOneField(
-        CustomUser, verbose_name="User", on_delete=models.CASCADE
+        CustomUser,
+        verbose_name="User",
+        related_name="profile",
+        primary_key=True,
+        on_delete=models.CASCADE,
     )
     bio = models.TextField(blank=True, null=True)
     picture = models.ImageField(
