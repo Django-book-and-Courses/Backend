@@ -1,11 +1,15 @@
 from rest_framework import generics
 from ebooks.models import Ebook, Author, Genre
-from ebooks.serializers import EbookModelSerializer, AuthorModelSerializer,GenreModelSerializer
-
+from ebooks.serializers import EbookModelSerializer, AuthorModelSerializer,GenreModelSerializer,EbookListDetailSerializer
 
 class EbookCreateListView(generics.ListCreateAPIView):
+    # permission_classes = 
     queryset = Ebook.objects.all()
-    serializer_class = EbookModelSerializer
+
+    def get_serializer_class(self):
+        if self.request.method == 'GET':
+            return EbookListDetailSerializer
+        return EbookModelSerializer
 
 
 class EbookRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
