@@ -127,3 +127,5 @@ APPEND_SLASH = False
 # AUTHENTICATION_BACKENDS = [
 #     "authentication.backends.CustomBackends",
 # ]
+
+DEFALUT_PROFILE_IMAGE_PATH = "/media/profile_pictures/default.jpg"

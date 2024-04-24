@@ -10,7 +10,7 @@ class CustomUser(AbstractUser):
 
 class UserProfile(models.Model):
     user = models.OneToOneField(
-        CustomUser, verbose_name="User", on_delete=models.CASCADE
+        CustomUser, verbose_name="User", related_name="profile", primary_key=True, on_delete=models.CASCADE
     )
     bio = models.TextField(blank=True, null=True)
     picture = models.ImageField(
