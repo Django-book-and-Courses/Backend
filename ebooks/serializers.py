@@ -33,6 +33,9 @@ class EbookModelSerializer(serializers.ModelSerializer):
         fields = ["title", "summary", "authors", "genres", "publication_date", "num_pages", "cover_photo", "created_by", "created_at", "updated_at"]  
 
     def validate_num_pages(self,value):
+        if value is None:
+            raise serializers.ValidationError("The number of pages must be provided.")
         if value < 5:
-            raise serializers.ValidationError('Precisa ter mais de 5 páginas')
+            raise serializers.ValidationError("An ebook must have at least 5 pages.")
+        return value
     
