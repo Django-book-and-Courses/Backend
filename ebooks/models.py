@@ -22,8 +22,8 @@ class Ebook(models.Model):
     publication_date = models.DateField(blank=True, null=True)
     num_pages = models.PositiveIntegerField(blank=True, null=True)
     cover_photo = models.ImageField(upload_to='book_covers/', blank=True, null=True)  
-    created_by = models.ForeignKey(Users, on_delete=models.SET_NULL, null=True, related_name="created_ebooks",blank=True, null=True)  # Quem criou
-    created_at = models.DateTimeField(auto_now_add=True,blank=True, null=True, null=True)
+    created_by = models.ForeignKey(Users, on_delete=models.SET_NULL, related_name="created_ebooks",blank=True, null=True)  # Quem criou
+    created_at = models.DateTimeField(auto_now_add=True,blank=True, null=True)
     updated_at = models.DateTimeField(auto_now_add=True,blank=True, null=True)
 
     def __str__(self):
