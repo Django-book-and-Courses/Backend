@@ -51,4 +51,4 @@ class EbookListDetailSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Ebook
-        fields = ["title", "summary", "authors", "genres", "publication_date", "num_pages", "cover_photo", "created_by", "created_at", "updated_at"]
+        fields = ["id","title", "summary", "authors", "genres", "publication_date", "num_pages", "cover_photo", "created_by", "created_at", "updated_at"]
