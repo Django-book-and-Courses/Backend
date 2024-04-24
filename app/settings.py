@@ -9,7 +9,7 @@ SECRET_KEY = config('SECRET_KEY', cast=str)
 
 DEBUG = config('DEBUG', cast=bool)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
