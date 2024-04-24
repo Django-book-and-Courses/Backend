@@ -20,8 +20,6 @@ class GenreModelSerializer(serializers.ModelSerializer):
  
 
 class EbookModelSerializer(serializers.ModelSerializer):
-    # authors = AuthorModelSerializer(many=True)  # Relacionamento Many-to-Many
-    # genres = GenreModelSerializer(many=True)  # Relacionamento Many-to-Many
     
     #  está informando ao Django REST Framework (DRF) que este campo representa uma data ou um carimbo de data e hora
     publication_date = serializers.DateField(format="%d-%m-%Y")  # Formato Brasileiro

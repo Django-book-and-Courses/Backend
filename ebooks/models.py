@@ -17,12 +17,12 @@ class Genre(models.Model):
 class Ebook(models.Model):
     title = models.CharField(max_length=200)
     summary = models.TextField(blank=True)
-    authors = models.ManyToManyField(Author, related_name="author_ebooks")  
-    genres = models.ManyToManyField(Genre, related_name="genre_ebooks") 
-    publication_date = models.DateField()
-    num_pages = models.PositiveIntegerField()
+    authors = models.ManyToManyField(Author, related_name="author_ebooks",blank=True)  
+    genres = models.ManyToManyField(Genre, related_name="genre_ebooks",blank=True) 
+    publication_date = models.DateField(blank=True)
+    num_pages = models.PositiveIntegerField(blank=True)
     cover_photo = models.ImageField(upload_to='book_covers/', blank=True, null=True)  
-    created_by = models.ForeignKey(Users, on_delete=models.SET_NULL, null=True, related_name="created_ebooks")  # Quem criou
+    created_by = models.ForeignKey(Users, on_delete=models.SET_NULL, null=True, related_name="created_ebooks",blank=True)  # Quem criou
     created_at = models.DateTimeField(auto_now_add=True,blank=True)
     updated_at = models.DateTimeField(auto_now_add=True,blank=True)
 
