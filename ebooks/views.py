@@ -16,6 +16,11 @@ class EbookRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Ebook.objects.all()
     serializer_class = EbookModelSerializer
 
+    def get_serializer_class(self):
+        if self.request.method == 'GET':
+            return EbookListDetailSerializer
+        return EbookModelSerializer
+
 
 class AuthorCreateListView(generics.ListCreateAPIView):
     queryset = Author.objects.all()
