@@ -33,7 +33,7 @@ class EbookListDetailSerializer(serializers.ModelSerializer):
 class EbookModelSerializer(serializers.ModelSerializer):
     
     # #  está informando ao Django REST Framework (DRF) que este campo representa uma data ou um carimbo de data e hora
-    publication_date = serializers.DateField(format="%d-%m-%Y")  # Formato Brasileiro
+    publication_date = serializers.DateField(format="%d/%m/%Y")  # Formato Brasileiro
     # created_at = serializers.DateTimeField(format="%d/%m/%Y as %H:%M:%S")  # Formato Brasileiro
     # updated_at = serializers.DateTimeField(format="%d/%m/%Y as %H:%M:%S")  # Formato Brasileiro
 
