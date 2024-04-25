@@ -19,7 +19,7 @@ class Ebook(models.Model):
     summary = models.TextField()
     authors = models.ManyToManyField(Author, related_name="author_ebooks",blank=True, null=True)  
     genres = models.ManyToManyField(Genre, related_name="genre_ebooks",blank=True, null=True) 
-    publication_date = models.DateField(blank=True, null=True)
+    publication_date = models.DateField()
     num_pages = models.PositiveIntegerField(blank=True, null=True)
     cover_photo = models.ImageField(upload_to='book_covers/', blank=True, null=True)  
     created_by = models.ForeignKey(Users, on_delete=models.SET_NULL, related_name="created_ebooks",blank=True, null=True)  # Quem criou
