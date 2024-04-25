@@ -16,7 +16,7 @@ class Genre(models.Model):
 
 class Ebook(models.Model):
     title = models.CharField(max_length=200)
-    summary = models.TextField(blank=True, null=True)
+    summary = models.TextField()
     authors = models.ManyToManyField(Author, related_name="author_ebooks",blank=True, null=True)  
     genres = models.ManyToManyField(Genre, related_name="genre_ebooks",blank=True, null=True) 
     publication_date = models.DateField(blank=True, null=True)
