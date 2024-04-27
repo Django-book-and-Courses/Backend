@@ -18,12 +18,11 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    
     # Django Apps
-  
-	  'ebooks',
-	  'cursos',
+	'ebooks',
+	'cursos',
     'authentication',
-
 
     # Third-party applications
     "corsheaders",
@@ -132,13 +131,11 @@ SESSION_COOKIE_SAMESITE = "Strict"
 
 APPEND_SLASH = False
 
-# AUTHENTICATION_BACKENDS = [
-#     "authentication.backends.CustomBackends",
-# ]
-
-
 DEFALUT_PROFILE_IMAGE_PATH = "/media/profile_pictures/default.jpg"
 
 AUTHENTICATION_BACKENDS = [
-    "authentication.backends.CustomBackends",
+    'django.contrib.auth.backends.ModelBackend',  # Backend padrão
+    'authentication.backends.CustomBackends',  # Backend personalizado
 ]
+
+
