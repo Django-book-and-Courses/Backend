@@ -1,5 +1,5 @@
 from django.db import models
-from authentication.models import Users
+from authentication.models import CustomUser
 
 class Author(models.Model):
     first_name = models.CharField(max_length=100)
@@ -22,7 +22,7 @@ class Ebook(models.Model):
     publication_date = models.DateField()
     num_pages = models.PositiveIntegerField()
     cover_photo = models.ImageField(upload_to='book_covers/', blank=True, null=True)  
-    created_by = models.ForeignKey(Users, on_delete=models.SET_NULL, null=True, related_name="created_ebooks")  # Quem criou
+    created_by = models.ForeignKey(CustomUser, on_delete=models.SET_NULL, null=True, related_name="created_ebooks")  # Quem criou
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
