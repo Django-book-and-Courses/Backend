@@ -19,8 +19,12 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     # Django Apps
-    # 'ebooks',
-    "authentication",
+  
+	  'ebooks',
+	  'cursos',
+    'authentication',
+
+
     # Third-party applications
     "corsheaders",
     "rest_framework",
@@ -38,7 +42,8 @@ MIDDLEWARE = [
     "authentication.middleware.RequestTimeMiddleware",
 ]
 
-CORS_ALLOWED_ORIGINS = ["http://127.0.0.1:5500"]
+
+CORS_ALLOW_ALL_ORIGINS = True
 
 ROOT_URLCONF = "app.urls"
 
@@ -129,4 +134,9 @@ APPEND_SLASH = False
 #     "authentication.backends.CustomBackends",
 # ]
 
+
 DEFALUT_PROFILE_IMAGE_PATH = "/media/profile_pictures/default.jpg"
+
+AUTHENTICATION_BACKENDS = [
+    "authentication.backends.CustomBackends",
+]
