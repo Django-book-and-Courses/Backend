@@ -15,7 +15,7 @@ class CategoriaAdmin(admin.ModelAdmin):
 
 @admin.register(Curso)
 class CursoAdmin(admin.ModelAdmin):
-    list_display = ("titulo", "professor", "carga_horaria", "categoria")  # Exibe informações no admin
-    list_filter = ("professor", "categoria")  # Permite filtrar por esses campos
+    list_display = ("titulo", "professor", "carga_horaria")  # Exibe informações no admin
+    list_filter = ("professor", "categorias")  # Permite filtrar por esses campos
     search_fields = ("titulo", "descricao")  # Campos que podem ser pesquisados
-    raw_id_fields = ("professor", "categoria")  # Melhora a interface para campos ForeignKey
+    raw_id_fields = ("professor", "categorias")  # Melhora a interface para campos ForeignKey
