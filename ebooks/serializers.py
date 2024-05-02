@@ -38,20 +38,20 @@ class EbookModelSerializer(serializers.ModelSerializer):
         model = Ebook
         fields = ["title", "summary", "authors", "genres", "publication_date", "num_pages", "cover_photo", "created_by", "created_at", "updated_at"]  
 
-    def validate_num_pages(self,value):
-        if value is None:
-            raise serializers.ValidationError("The number of pages must be provided.")
-        if value < 5:
-            raise serializers.ValidationError("An ebook must have at least 5 pages.")
-        return value
+    # def validate_num_pages(self,value):
+    #     if value is None:
+    #         raise serializers.ValidationError("The number of pages must be provided.")
+    #     if value < 5:
+    #         raise serializers.ValidationError("An ebook must have at least 5 pages.")
+    #     return value
     
-    # Função de validação personalizada para verificar o formato da data
-    def validate_brazilian_date(value):
-        try:
-            # Tenta converter o valor para um objeto datetime no formato "dd/mm/aaaa"
-            datetime.strptime(value, '%d/%m/%Y')
-        except ValueError:
-            raise serializers.ValidationError("A data deve estar no formato dd/mm/aaaa.")
+    # # Função de validação personalizada para verificar o formato da data
+    # def validate_brazilian_date(value):
+    #     try:
+    #         # Tenta converter o valor para um objeto datetime no formato "dd/mm/aaaa"
+    #         datetime.strptime(value, '%d/%m/%Y')
+    #     except ValueError:
+    #         raise serializers.ValidationError("A data deve estar no formato dd/mm/aaaa.")
     
     created_at = serializers.ReadOnlyField()  # Auto-generated, should not be explicitly set
     updated_at = serializers.ReadOnlyField()  # Auto-generated, should not be explicitly set
