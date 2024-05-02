@@ -32,7 +32,7 @@ class GenreModelTest(TestCase):
 class EbookModelTest(TestCase):
     @classmethod
     def setUpTestData(cls):
-        # Configura dados de teste para a classe de testes do modelo Ebook.
+        # Configura dados de teste para a classe de testes do modelo Ebook..
         # Cria um usuário, um autor, um gênero e um ebook no banco de dados.
         user = CustomUser.objects.create(username='testuser')
         author1 = Author.objects.create(first_name='John', last_name='Doe')
